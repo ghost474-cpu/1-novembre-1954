@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <!-- منع التكبير والتصغير وتثبيت أبعاد الشاشة -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+<!-- إجبار المتصفح على نمط App Mode على أجهزة أندرويد وiOS -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>1er Novembre 1954 - Carte Interactive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+</head>
+<body>
+
+    <!-- Barre Supérieure -->
+    <header class="top-bar">
+        <button id="quickViewBtn" class="top-btn" style="border-radius: 20px;">◀ APERÇU RAPIDE</button>
+        <div class="share-box">
+            <span>SHARE :</span>
+            <button class="icon-btn">f</button>
+            <button class="icon-btn">x</button>
+            <button class="icon-btn">in</button>
+        </div>
+    </header>
+
+    <!-- حاوية الخريطة الرئيسية - النسبة ثابتة هنا لضمان عدم تحرك النقاط -->
+    <div class="map-container">
+        <img src="Algeria 2.jpeg" alt="Carte Algérie 1954" class="map-image">
+
+        <!-- Oran: تقع في أقصى الغرب على الساحل قرب الدائرة الموجودة في الخريطة -->
+        <div class="hotspot" data-region="oran" style="top: 51%; left: 8%;">
+            <div class="pulse"></div>
+            <span class="tooltip">Wilaya V - Oran</span>
+        </div>
+
+        <!-- Alger: تقع في منتصف الشريط الساحلي فوق نقطة الخريطة الأصلية -->
+        <div class="hotspot" data-region="alger" style="top: 28%; left: 48.5%;">
+            <div class="pulse"></div>
+            <span class="tooltip">Wilaya IV - Alger</span>
+        </div>
+
+        <!-- Kabylie: في المنطقة الجبلية شرق العاصمة مباشرة -->
+        <div class="hotspot" data-region="kabylie" style="top: 27%; left: 59%;">
+            <div class="pulse"></div>
+            <span class="tooltip">Wilaya III - Kabylie</span>
+        </div>
+
+        <!-- Constantine: في المنطقة الشرقية الداخلية فوق حرف C -->
+        <div class="hotspot" data-region="constantine" style="top: 28%; left: 74.5%;">
+            <div class="pulse"></div>
+            <span class="tooltip">Wilaya II - Constantine</span>
+        </div>
+
+        <!-- Aurès: في السلسلة الجبلية الجنوبية الشرقية داخل البيضوي الأحمر -->
+        <div class="hotspot" data-region="aures" style="top: 44.5%; left: 74%;">
+            <div class="pulse"></div>
+            <span class="tooltip">Wilaya I - Aurès</span>
+        </div>
+
+        <!-- إطار الصورة التاريخية المتناسق في جنوب غرب الخريطة (الصحراء) -->
+        <div class="photo-frame">
+            <img src="Revolution.jpeg" alt="Photo Historique 1954">
+            <p>1er Novembre 1954 - Révolution Algérienne</p>
+        </div>
+    </div>
+
+    <div class="vignette-overlay"></div>
+
+    <!-- Zone Centrale & Connecteurs -->
+    <main class="center-stage">
+        <div class="side-button-wrapper left">
+            <button class="node-btn" id="aboutBtn">À PROPOS DU 1ER NOVEMBRE</button>
+            <div class="connector-line left-line"></div>
+        </div>
+
+        <div class="main-circle">
+            <div class="circle-inner">
+                <span class="subtitle">COMMENCER LE VOYAGE</span>
+                <h1 class="title">1ER NOVEMBRE 1954</h1>
+                <p class="desc">
+                    Revivez le déclenchement de la Révolution Algérienne : des montagnes des Aurès jusqu'à l'indépendance.
+                </p>
+                <button class="start-btn" id="startBtn">COMMENCER</button>
+            </div>
+        </div>
+
+        <div class="side-button-wrapper right">
+            <div class="connector-line right-line"></div>
+            <button class="node-btn" id="heroesBtn">LES HÉROS DE LA RÉVOLUTION</button>
+        </div>
+    </main>
+
+    <!-- Pied de Page -->
+    <footer class="bottom-bar">
+        <div class="footer-left">
+            <a href="#" id="creditsBtn">SITE CREDITS</a>
+            <a href="#" id="contactBtn">CONTACT INFO</a>
+        </div>
+
+        <div class="footer-center">
+            <h2>1ER NOVEMBRE 1954 : D-DAY TO VICTORY</h2>
+            <div class="logos-strip">
+                <span class="logo-item">FLN 1954</span>
+                <span class="logo-item">ALN ARCHIVES</span>
+                <span class="logo-item">HISTOIRE D'ALGÉRIE</span>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <button id="soundBtn" class="footer-btn">🔊 SOUND ON</button>
+            <button id="fullscreenBtn" class="footer-btn">⛶ FULLSCREEN</button>
+        </div>
+    </footer>
+
+    <!-- Modal d'informations -->
+    <div class="modal" id="infoModal">
+        <div class="modal-box">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2 id="modalTitle">Titre</h2>
+            <div class="divider"></div>
+            <div id="modalContent">Contenu...</div>
+        </div>
+    </div>
+
+    <div class="black-overlay"><img class="rotate" src="rotat.png"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

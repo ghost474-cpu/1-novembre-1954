@@ -1,0 +1,75 @@
+@media (min-height: 580px) and (max-height: 635px) {
+    .main-circle {
+        width: 200px;
+        height: 200px;
+    }
+    .node-btn {
+        font-size: 7px;
+    }
+    .photo-frame {
+        width: 120px;
+        bottom: 13%;
+    }
+}
+ @media (min-height: 0px) and (max-height: 579px) {
+    .main-circle {
+        display: none;
+    }
+    .node-btn {
+        display: none;
+    }
+    .photo-frame {
+        display: none;
+    }
+    .top-btn, .icon-btn{
+        font-size: 10px;
+    }
+    .bottom-bar {
+        height: 50px;
+    }
+
+}
+@media (min-width: 0px) and (max-width: 620px) {
+    .black-overlay {
+    display: block;
+    text-align: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #020202;
+    z-index: 99999; /* يضمن ظهوره فوق كل عناصر الصفحة */
+    pointer-events: all; /* يمنع الضغط على العناصر الخفية خلفه */
+}
+.rotate {
+    margin-top: 30vh;
+}
+}
+@media (min-width: 621px) and (max-width: 860px) {
+    .main-circle {
+        width: 200px;
+        height: 200px;
+    }
+    .node-btn {
+        font-size: 7px;
+    }
+}
+@media (max-width: 821px) {
+    #creditsBtn, #contactBtn {
+        font-size: 7px;
+    }
+}
+@media (max-width: 630px) {
+    .main-circle {
+        width: 190px;
+        height: 190px;
+    }
+    .node-btn {
+        font-size: 5px;
+    }
+    .node-btn:hover {
+        font-size: 8px;
+    }
+}
