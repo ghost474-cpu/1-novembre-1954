@@ -9,7 +9,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>1er Novembre 1954 - Carte Interactive</title>
+    <title>1er Novembre 1954</title>
+    <link rel="website icon" type="png" href="logo.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,15 +21,16 @@
 <body>
 
     <!-- Barre Supérieure -->
-    <header class="top-bar">
-        <button id="quickViewBtn" class="top-btn" style="border-radius: 20px;">◀ APERÇU RAPIDE</button>
-        <div class="share-box">
-            <span>SHARE :</span>
-            <button class="icon-btn">f</button>
-            <button class="icon-btn">x</button>
-            <button class="icon-btn">in</button>
-        </div>
-    </header>
+<div class="top-bar">
+    <button id="quickViewBtn" class="top-btn" style="border-radius: 20px; display: none;">À PROPOS DU REVOLUTION</button>
+    <button id="heroesBtn-2" class="top2-btn" style="border-radius: 20px; display: none; font-size: 10px;">LES HÉROS DE LA RÉVOLUTION</button>
+<div class="share-box">
+    <span>SHARE :</span>
+    <button id="shareFbBtn" class="icon-btn">f</button>
+    <button id="shareXBtn" class="icon-btn">x</button>
+    <button id="shareInBtn" class="icon-btn">in</button>
+</div>
+</div>
 
     <!-- حاوية الخريطة الرئيسية - النسبة ثابتة هنا لضمان عدم تحرك النقاط -->
     <div class="map-container">
@@ -64,12 +66,17 @@
             <span class="tooltip">Wilaya I - Aurès</span>
         </div>
 
-        <!-- إطار الصورة التاريخية المتناسق في جنوب غرب الخريطة (الصحراء) -->
-        <div class="photo-frame">
-            <img src="Revolution.jpeg" alt="Photo Historique 1954">
-            <p>1er Novembre 1954 - Révolution Algérienne</p>
-        </div>
+<div class="photo-frame">
+    <div class="slideshow-container">
+        <img src="Revolution.jpeg" alt="Photo 1" class="slide active">
+        <img src="Revolution2.jpg" alt="Photo 2" class="slide">
+        <img src="Revolution3.jpeg" alt="Photo 3" class="slide">
+        <img src="Revolution4.jpg" alt="photo 4" class="slide">
+        <img src="Revolution5.webp" alt="photo 4" class="slide">
+        <img src="Revolution6.jpeg" alt="photo 4" class="slide">
     </div>
+    <p id="slideCaption">Moudjahidines de l'ALN dressant le drapeau algérien.</p>
+</div>
 
     <div class="vignette-overlay"></div>
 
@@ -105,7 +112,7 @@
         </div>
 
         <div class="footer-center">
-            <h2>1ER NOVEMBRE 1954 : D-DAY TO VICTORY</h2>
+            <h2>1ER NOVEMBRE 1954 : DU DÉPARQUEMENT À LA VICTOIRE</h2>
             <div class="logos-strip">
                 <span class="logo-item">FLN 1954</span>
                 <span class="logo-item">ALN ARCHIVES</span>

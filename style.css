@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 html, body {
@@ -64,12 +65,13 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    z-index: 50;
     font-size: 11px;
     letter-spacing: 1.5px;
+    transform: translateZ(0);
 }
 
-.top-btn, .icon-btn {
+.top-btn, .icon-btn, .top2-btn {
     background: rgba(15, 17, 23, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #d1d5db;
@@ -79,7 +81,7 @@ html, body {
     backdrop-filter: blur(4px);
 }
 
-.top-btn:hover, .icon-btn:hover {
+.top-btn:hover, .icon-btn:hover, .top2-btn:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.2);
     border-color: #b91c1c;
@@ -88,6 +90,7 @@ html, body {
 .share-box span {
     margin-right: 10px;
     color: #9ca3af;
+    font-size: 15px;
 }
 
 /* النقاط التفاعلية (Hotspots) - منسوبة مباشرة للـ map-container */
@@ -176,6 +179,33 @@ html, body {
     color: #e5e7eb;
     margin-top: 5px;
     letter-spacing: 0.5px;
+}
+
+/* إطار العرض المتسلسل للصور */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* حافظ على أبعاد ثابتة للصورة لتجنب اهتزاز الإطار */
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+/* تنسيق الصور بحيث تتوضع فوق بعضها البعض */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* زمن الانتقال بين الصور (ثانية واحدة) */
+    filter: sepia(0.25) contrast(1.1);
+}
+
+/* الصورة النشطة التي تظهر حالياً */
+.slide.active {
+    opacity: 1;
 }
 
 /* Center Stage العناصر المركزية */
@@ -361,19 +391,47 @@ html, body {
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* صندوق المحتوى الداخلي */
+/* تعديل صندوق النافذة ليمتلك ارتفاعاً ثابتاً ولا يتمدد بلا حدود */
 .modal-box {
     background: #0f1117;
     border: 1px solid rgba(245, 158, 11, 0.4);
     padding: 30px;
     width: 90%;
     max-width: 550px;
+    max-height: 80vh; /* منع النافذة من تجاوز 80% من الشاشة */
+    display: flex;
+    flex-direction: column;
     border-radius: 4px;
     position: relative;
     
     /* حركة التكبير والظهور */
     transform: scale(0.8) translateY(-20px);
     transition: transform 0.3s ease;
+}
+
+/* جعل محتوى النص قابلاً للسحب والتمرير (Scroll) عند زيادة الطول */
+#modalContent {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #9ca3af;
+    overflow-y: auto; /* إظهار شريط التمرير العمودي عند الحاجة */
+    max-height: 55vh; /* تحديد منطقة النص لتكون قابلة للسحب داخلياً */
+    padding-right: 8px;
+}
+
+/* تخصيص شكل شريط التمرير ليتوافق مع الثيم الداكن */
+#modalContent::-webkit-scrollbar {
+    width: 5px;
+}
+#modalContent::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+#modalContent::-webkit-scrollbar-thumb {
+    background: rgba(245, 158, 11, 0.4);
+    border-radius: 4px;
+}
+#modalContent::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 158, 11, 0.7);
 }
 
 /* الكلاس الذي يُضاف بالجافاسكربت عند فتح النافذة */
@@ -407,12 +465,33 @@ html, body {
     margin-bottom: 15px;
 }
 
-#modalContent {
-    font-size: 13px;
-    line-height: 1.7;
-    color: #9ca3af;
-}
-
 .black-overlay {
     display: none;
+}
+
+/* تنسيق الفقرات والهوامش مع إضافة إزاحة في بداية كل فقرة */
+.modal-paragraph {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    text-align: justify;
+    text-indent: 15px; /* ترك مسافة فارغة في بداية السطر الأول لكل فقرة */
+}
+
+/* تنسيق القوائم المرقّمة والمنقطة داخل النافذة */
+.modal-list {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 25px; /* هامش جانبي لتحديد المسافة البادئة للتعداد */
+}
+
+.modal-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+/* تمييز أرقام ونقاط القائمة بلون ذهبي/برتقالي متناسق */
+ol.modal-list::marker, ul.modal-list::marker {
+    color: #f59e0b;
+    font-weight: bold;
 }

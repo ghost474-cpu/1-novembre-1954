@@ -1,0 +1,15 @@
+ Bienvenue sur notre archive interactive dédiée à la Révolution Algérienne (1954-1962). En accédant à ce site, vous acceptez de respecter les conditions d'utilisation définies ci-dessous :
+
+* Design et Interface du Site :
+Le design original de l'interface, la structure visuelle, ainsi que le code source du projet sont mis à disposition sous une licence ouverte. Vous êtes libre de les réutiliser, de les adapter et de les intégrer à vos propres projets, sous réserve d'une organisation et d'une mise en page soignées.
+
+* Carte Interactive et Éléments Visuels Principaux :
+L'image de la carte géographique principale et sa conception graphique sont la propriété exclusive du développeur du projet. Leur utilisation est libre et autorisée pour tous, sans restriction ni nécessité d'autorisation préalable, dans une démarche de partage et de commémoration historique.
+
+* Textes, Articles et Contenus Rédactionnels :
+L'ensemble des paragraphes, des descriptions textuelles et des synthèses historiques rédigés sur ce site est libre de droits pour le public. Ces contenus peuvent être librement utilisés, partagés et exploités sans aucune contrepartie ni restriction.
+
+* Photographies et Archives Visuelles Secondaires :
+Les petites images d'archives, photographies historiques et illustrations secondaires diffusées à travers le site ne nous appartiennent pas. Leurs droits d'auteur et de propriété intellectuelle demeurent la propriété exclusive de leurs détenteurs et sources respectifs. Leur réutilisation est soumise aux règles en vigueur applicables par leurs ayants droit.
+
+Pour toute question ou demande d'information complémentaire concernant l'utilisation du contenu de ce site, veuillez vous référer aux administrateurs du projet.

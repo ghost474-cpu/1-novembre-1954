@@ -27,6 +27,9 @@
     .bottom-bar {
         height: 50px;
     }
+    .modal-box {
+        max-height: 75vh;
+    }
 
 }
 @media (min-width: 0px) and (max-width: 620px) {
@@ -40,8 +43,11 @@
     width: 100vw;
     height: 100vh;
     background-color: #020202;
-    z-index: 99999; /* يضمن ظهوره فوق كل عناصر الصفحة */
+    z-index: 9999; /* يضمن ظهوره فوق كل عناصر الصفحة */
     pointer-events: all; /* يمنع الضغط على العناصر الخفية خلفه */
+}
+.top-bar {
+    display: none;
 }
 .rotate {
     margin-top: 30vh;
