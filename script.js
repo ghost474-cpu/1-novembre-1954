@@ -306,24 +306,27 @@ if (shareInBtn) {
     });
 }
 
-// Console Academic Credit & Ownership Message
+
 console.log(
     "%c 🇩🇿 ARCHIVE HISTORIQUE - RÉVOLUTION ALGÉRIENNE %c\n\n" +
     "%cProjet Académique & Historique — Projet Scolaire\n\n" +
     "Bonjour et bienvenue dans la console de développement !\n" +
-    "Ce site web interactif a été conçu et développé entièrement par nos soins dans le cadre d'un projet scolaire/académique.\n\n" +
+    "Ce site web interactif a été conçu et développé dans le cadre d'un projet scolaire et académique.\n\n" +
     "👨‍💻 Développeur principal & Designer : AMEUR HOUSSEM.\n" +
-    "🤝 Co-auteurs / Collaborateurs : ZAKI, MOUADH, YOUSSEF.\n\n" +
-    "📌 Objectif du projet : Créer une plateforme numérique interactive, moderne et fonctionnelle pour commémorer la mémoire de la Révolution Algérienne (1954-1962).\n" +
-    "📄 Droits & Propriété : Tous les choix d'architecture, d'interface et de code source attestent de l'originalité de ce travail académique.\n\n" +
-    "« Un seul héros, le peuple. »",
-    
-    // شريط العنوان العلوي (أخضر بنص أبيض مميز)
+    "🤝 Collaborateurs : ZAKI, MOUADH, YOUSSEF.\n\n" +
+    "📌 Objectif du projet : Créer une plateforme numérique interactive et documentée pour préserver et partager la mémoire de la Révolution Algérienne (1954-1962).\n\n" +
+    "📄 Droits & Propriété : Le contenu, le code source, l'interface et la carte principale sont soumis aux conditions d'utilisation du projet. Toute réutilisation doit respecter les autorisations et restrictions précisées dans ces conditions.\n\n" +
+    "🖼️ Photographies : Les images d'archives appartiennent à leurs auteurs et propriétaires respectifs.\n\n" +
+    "💡 Merci de respecter le travail de ses créateurs et la vocation éducative et historique de ce projet.\n\n" +
+    "« Un seul héros, le peuple. » 🇩🇿",
+
+    // شريط العنوان العلوي
     "background: #006633; color: #ffffff; font-size: 13px; font-weight: bold; padding: 6px 12px; border-radius: 4px;",
     "",
-    // تنسيق النص الرئيسي (رمادي فاتح وأسلوب أكاديمي منظم)
+    // تنسيق النص الرئيسي
     "color: #d1d5db; font-size: 11px; line-height: 1.6; font-family: monospace;"
 );
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const loaderWrapper = document.getElementById("loader-wrapper");
