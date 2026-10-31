@@ -224,7 +224,7 @@ const captions = [
     "Foule en liesse lors des manifestations populaires.",
     "Portrait des six chefs historiques du FLN (1954).",
     "Unité de l'Armée de Libération Nationale dans le maquis.",
-    "Femme et enfants devant un mur arborant le célèbre slogan de la Révolution."
+    "Des enfants algériens assis devant un mur, s'amusant et jouant."
 ];
 
 let currentSlide = 0;
