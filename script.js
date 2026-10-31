@@ -324,3 +324,54 @@ console.log(
     // تنسيق النص الرئيسي (رمادي فاتح وأسلوب أكاديمي منظم)
     "color: #d1d5db; font-size: 11px; line-height: 1.6; font-family: monospace;"
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loaderWrapper = document.getElementById("loader-wrapper");
+    const progressBar = document.getElementById("progress-bar");
+    const progressPercentage = document.getElementById("progress-percentage");
+
+    // جمع كافة الصور الموجودة في الصفحة (أو يمكنك تخصيصها للصور الخاصة بالخريطة والأرشيف فقط)
+    const images = document.querySelectorAll("img");
+    const totalImages = images.length;
+
+    // إذا لم تكن هناك صور في الصفحة لأي سبب، اخفِ اللودر فوراً
+    if (totalImages === 0) {
+        hideLoader();
+        return;
+    }
+
+    let imagesLoadedCount = 0;
+
+    function imageLoaded() {
+        imagesLoadedCount++;
+        let progress = Math.floor((imagesLoadedCount / totalImages) * 100);
+        
+        // تحديث عرض شريط التقدم والنسبة المئوية
+        progressBar.style.width = progress + "%";
+        progressPercentage.textContent = progress + "%";
+
+        // إذا تم تحميل كل الصور بنجاح
+        if (imagesLoadedCount === totalImages) {
+            // مهلة قصيرة جداً (0.5 ثانية) ليرى المستخدم 100% بعينه قبل الإخفاء
+            setTimeout(hideLoader, 500);
+        }
+    }
+
+    function hideLoader() {
+        loaderWrapper.classList.add("loader-hidden");
+        // إزالة العنصر من الصفحة تماماً بعد انتهاء تأثير الاختفاء
+        setTimeout(() => {
+            loaderWrapper.style.display = "none";
+        }, 600);
+    }
+
+    // فحص كل صورة على حدة، سواء تم تحميلها من الكاش أو من السيرفر
+    images.forEach(img => {
+        if (img.complete) {
+            imageLoaded();
+        } else {
+            img.addEventListener("load", imageLoaded);
+            img.addEventListener("error", imageLoaded); // حتى لو فشلت صورة لسبب ما لا يتوقف اللودر
+        }
+    });
+});
