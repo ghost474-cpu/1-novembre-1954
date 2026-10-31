@@ -20,23 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
             file: "heroes.txt"
         },
         oran: {
-            title: "Wilaya V - L'Oranie (Oran)",
+            title: "Zone V - L'Oranie (Oran)",
             file: "Oran.txt"
         },
         alger: {
-            title: "Wilaya IV - Alger / Algérois",
+            title: "Zone IV - Alger / Algérois",
             file: "Alger.txt"
         },
         kabylie: {
-            title: "Wilaya III - La Kabylie",
+            title: "Zone III - La Kabylie",
             file: "Kabile.txt"
         },
         constantine: {
-            title: "Wilaya II - Nord-Constantinois",
+            title: "Zone II - Nord-Constantinois",
             file: "Constantine.txt"
         },
         aures: {
-            title: "Wilaya I - Les Aurès",
+            title: "Zone I - Les Aurès",
             file: "Aures.txt"
         },
         chronology: {
