@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             file: "Aures.txt"
         },
         chronology: {
-            title: "Chronologie de la Révolution",
+            title: "Les Héros De La Révolution",
             file: "heroes.txt"
         },
         credit: {
