@@ -495,3 +495,66 @@ ol.modal-list::marker, ul.modal-list::marker {
     color: #f59e0b;
     font-weight: bold;
 }
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #202022; /* لون داكن يتناسب مع تصميم الموقع */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    color: #ffffff;
+    font-family: sans-serif;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+.loader-content h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #f8fafc;
+}
+
+.loader-content p {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* حاوية شريط التقدم */
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #1e293b;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* الشريط المتحرك */
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #10b981; /* لون أخضر أنيق متناسق مع هُوية الموقع */
+    transition: width 0.2s ease;
+}
+
+#progress-percentage {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+/* كلاس يتم إضافته عبر جافاسكربت لإخفاء الشاشة تماماً بعد الاكتمال */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
