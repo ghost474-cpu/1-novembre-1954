@@ -50,7 +50,12 @@
     display: none;
 }
 .rotate {
-    margin-top: 30vh;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 }
 @media (min-width: 621px) and (max-width: 860px) {
