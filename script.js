@@ -313,7 +313,7 @@ console.log(
     "Bonjour et bienvenue dans la console de développement !\n" +
     "Ce site web interactif a été conçu et développé dans le cadre d'un projet scolaire et académique.\n\n" +
     "👨‍💻 Développeur principal & Designer : AMEUR HOUSSEM.\n" +
-    "🤝 Collaborateurs : ZAKI, MOUADH, YOUSSEF.\n\n" +
+    "🤝 Collaborateurs : ZAKI, MOUAAD, DJAAFAR, OMAR.\n\n" +
     "📌 Objectif du projet : Créer une plateforme numérique interactive et documentée pour préserver et partager la mémoire de la Révolution Algérienne (1954-1962).\n\n" +
     "📄 Droits & Propriété : Le contenu, le code source, l'interface et la carte principale sont soumis aux conditions d'utilisation du projet. Toute réutilisation doit respecter les autorisations et restrictions précisées dans ces conditions.\n\n" +
     "🖼️ Photographies : Les images d'archives appartiennent à leurs auteurs et propriétaires respectifs.\n\n" +
